@@ -85,7 +85,7 @@ func (b *TokenBuilder) WithApplicationID(applicationID string) *TokenBuilder {
 // WithSecret sets the secret used to sign the token. (required)
 //
 //  Arguments:
-// secret -- the shared secret ro sigh the token
+// secret -- the shared secret to sign the token
 func (b *TokenBuilder) WithSecret(secret string) *TokenBuilder {
 	b.secret = &secret
 	return b
