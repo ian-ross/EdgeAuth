@@ -31,7 +31,7 @@ $ go build ./cmd/edgeauth
 In the `go-edgeauth` directory:
 
 ```shell script
-$ go test -v
+$ go test -v ./test
 ```
 
 ## Example
