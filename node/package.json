@@ -13,7 +13,6 @@
     "lint": "eslint . --cache --ignore-path .gitignore",
     "lint:fix": "eslint . --fix --ignore-path .gitignore"
   },
-  "dependencies": {},
   "engines": {
     "node": ">=10.15.3"
   },
