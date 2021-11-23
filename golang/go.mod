@@ -1,4 +1,4 @@
-module github.com/PhenixRTS/EdgeAuth/go-edgeauth
+module github.com/PhenixRTS/EdgeAuth/golang
 
 go 1.17
 

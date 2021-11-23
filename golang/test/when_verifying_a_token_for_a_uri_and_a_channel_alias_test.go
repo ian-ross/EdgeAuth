@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	edgeauth "github.com/PhenixRTS/EdgeAuth/go-edgeauth"
+	edgeauth "github.com/PhenixRTS/EdgeAuth/golang"
 )
 
 func TestWhenVerifyingATokenForAUriAndAChannelAlias(t *testing.T) {

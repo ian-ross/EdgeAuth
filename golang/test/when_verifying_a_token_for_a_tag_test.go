@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	edgeauth "github.com/PhenixRTS/EdgeAuth/go-edgeauth"
+	edgeauth "github.com/PhenixRTS/EdgeAuth/golang"
 )
 
 func TestWhenVerifyingATokenForATag(t *testing.T) {

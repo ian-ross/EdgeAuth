@@ -10,17 +10,17 @@ Authorization Digest Tokens (this installs the executable into
 `$GOPATH/bin`):
 
 ```shell script
-$ go install github.com/PhenixRTS/EdgeAuth/go-edgeauth/...@v0.0.1
+$ go install github.com/PhenixRTS/EdgeAuth/golang/...@v0.0.1
 ```
 
 To install the Go package to develop against:
 
 ```shell script
-$ go get github.com/PhenixRTS/EdgeAuth/go-edgeauth@v0.0.1
+$ go get github.com/PhenixRTS/EdgeAuth/golang@v0.0.1
 ```
 
 To build the `edgeauth` executable from source, clone this repository
-and in the `go-edgeauth` directory:
+and in the `golang` directory:
 
 ```shell script
 $ go build ./cmd/edgeauth
@@ -28,7 +28,7 @@ $ go build ./cmd/edgeauth
 
 ## Testing
 
-In the `go-edgeauth` directory:
+In the `golang` directory:
 
 ```shell script
 $ go test -v ./test
@@ -36,7 +36,7 @@ $ go test -v ./test
 
 ## Example
 
-After installing the `go-edgeauth` package as described above, create
+After installing the `golang` package as described above, create
 a Go test program:
 
 ```shell script
@@ -52,7 +52,7 @@ package main
 
 import (
 	"fmt"
-	edgeauth "github.com/PhenixRTS/EdgeAuth/go-edgeauth"
+	edgeauth "github.com/PhenixRTS/EdgeAuth/golang"
 )
 
 func main() {
@@ -75,7 +75,7 @@ func main() {
 Build and run the example:
 
 ```shell script
-$ go get github.com/PhenixRTS/EdgeAuth/go-edgeauth
+$ go get github.com/PhenixRTS/EdgeAuth/golang@v0.0.1
 $ go build
 $ ./edgeauth-test
 ```
