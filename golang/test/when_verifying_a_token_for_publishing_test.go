@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	edgeauth "github.com/ian-ross/EdgeAuth/go-edgeauth"
+	edgeauth "github.com/ian-ross/EdgeAuth/golang"
 )
 
 func TestWhenVerifyingATokenForPublishing(t *testing.T) {

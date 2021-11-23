@@ -3,7 +3,7 @@ package edgeauth
 import (
 	"testing"
 
-	edgeauth "github.com/ian-ross/EdgeAuth/go-edgeauth"
+	edgeauth "github.com/ian-ross/EdgeAuth/golang"
 )
 
 func TestWhenVerifyingABadToken(t *testing.T) {

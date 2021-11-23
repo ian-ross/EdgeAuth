@@ -4,13 +4,13 @@
 
  - Because of the way that Go package management works, I've been
    developing this code in my own repository, using the package name
-   `github.com/ian-ross/EdgeAuth/go-edgeauth`.
+   `github.com/ian-ross/EdgeAuth/golang`.
 
  - This code (which is on branch `go-package` in this repository)
    works, and can be tested using the example in the `README`, but to
    release the code under the `PhenixRTS` namespace, the paths in the
    code need to be changed to refer to
-   `github.com/PhenixRTS/EdgeAuth/go-edgeauth`.
+   `github.com/PhenixRTS/EdgeAuth/golang`.
 
  - Code with the correct `PhenixRTS` paths is available on the
    `go-package-release` branch of this repository. The code on the
@@ -35,12 +35,12 @@
        `github.com/PhenixRTS/EdgeAuth` repository.
        
     2. Tagging that repository with a tag of the form
-       `go-edgeauth/v0.0.1`.
+       `golang/v0.0.1`.
        
     3. Telling the Go Module Index to pick up the new module by doing:
     
 ```shell script
-GOPROXY=proxy.golang.org go list -m github.com/PhenixRTS/EdgeAuth/go-edgeauth@v0.0.1
+GOPROXY=proxy.golang.org go list -m github.com/PhenixRTS/EdgeAuth/golang@v0.0.1
 ```
 
 

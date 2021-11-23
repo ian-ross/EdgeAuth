@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	edgeauth "github.com/ian-ross/EdgeAuth/go-edgeauth"
+	edgeauth "github.com/ian-ross/EdgeAuth/golang"
 )
 
 // Args collects all the command line arguments together.

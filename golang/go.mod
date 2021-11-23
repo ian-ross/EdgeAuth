@@ -1,4 +1,4 @@
-module github.com/ian-ross/EdgeAuth/go-edgeauth
+module github.com/ian-ross/EdgeAuth/golang
 
 go 1.17
 
