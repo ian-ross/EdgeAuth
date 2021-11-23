@@ -75,7 +75,7 @@ func main() {
 Build and run the example:
 
 ```shell script
-$ go get github.com/ian-ross/EdgeAuth/golang
+$ go get github.com/ian-ross/EdgeAuth/golang@v0.0.1
 $ go build
 $ ./edgeauth-test
 ```
