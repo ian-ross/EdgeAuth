@@ -65,4 +65,18 @@ GOPROXY=proxy.golang.org go list -m github.com/PhenixRTS/EdgeAuth/golang@v0.0.1
    capabilities "b" and "a" in that order would result in different
    token digests between the Java(script) and Python library versions.
    Which is the correct behavior here?
-   
+
+
+# Behavior-Driven Development with `godog`
+
+## Install `godog`
+
+```
+go get github.com/cucumber/godog/cmd/godog@v0.12.0
+```
+
+## Run `godog`
+
+```
+godog run ../features
+```
