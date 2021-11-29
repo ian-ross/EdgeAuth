@@ -72,7 +72,7 @@ GOPROXY=proxy.golang.org go list -m github.com/PhenixRTS/EdgeAuth/golang@v0.0.1
 ## Install `godog`
 
 ```
-go get github.com/cucumber/godog/cmd/godog@v0.12.0
+go install github.com/cucumber/godog/cmd/godog@v0.12.0
 ```
 
 ## Run `godog`
