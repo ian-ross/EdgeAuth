@@ -78,5 +78,5 @@ go install github.com/cucumber/godog/cmd/godog@v0.12.0
 ## Run `godog`
 
 ```
-godog run ../features
+godog run
 ```

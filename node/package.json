@@ -9,7 +9,6 @@
     "preinstall": "npm prune",
     "pretest": "npm install",
     "test": "jest",
-    "bdd-test": "cucumber-js --require ./features ../features",
     "posttest": "npm run lint",
     "lint": "eslint . --cache --ignore-path .gitignore",
     "lint:fix": "eslint . --fix --ignore-path .gitignore"
@@ -18,7 +17,6 @@
     "node": ">=10.15.3"
   },
   "devDependencies": {
-    "@cucumber/cucumber": "*",
     "commander": "^7.2.0",
     "eslint": "6.1.0",
     "eslint-plugin-notice": "0.8.8",
