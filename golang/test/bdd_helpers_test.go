@@ -7,14 +7,15 @@ import (
 	"time"
 
 	"github.com/cucumber/godog"
+	edgeauth "github.com/ian-ross/EdgeAuth/golang"
 )
 
 // --  STATE  ------------------------------------------------------------------
 
 var token *string
 var correctToken *string
-var builder *TokenBuilder
-var result *VerifyAndDecodeResult
+var builder *edgeauth.TokenBuilder
+var result *edgeauth.VerifyAndDecodeResult
 
 // --  STEPS  ------------------------------------------------------------------
 
@@ -27,7 +28,7 @@ func iHaveABadToken() error {
 }
 
 func iHaveAGoodToken() error {
-	builder = NewTokenBuilder()
+	builder = edgeauth.NewTokenBuilder()
 	builder = builder.
 		WithApplicationID("my-application-id").
 		WithSecret("my-secret").
@@ -36,7 +37,7 @@ func iHaveAGoodToken() error {
 }
 
 func iHaveAGoodTokenWithURI(arg1 string) error {
-	builder = NewTokenBuilder()
+	builder = edgeauth.NewTokenBuilder()
 	builder = builder.
 		WithApplicationID("my-application-id").
 		WithSecret("my-secret").
@@ -52,7 +53,7 @@ func iTryToVerifyItWithABadSecret() error {
 	if err != nil {
 		return err
 	}
-	result = VerifyAndDecode("bad-secret", *token)
+	result = edgeauth.VerifyAndDecode("bad-secret", *token)
 	return nil
 }
 
@@ -64,7 +65,7 @@ func iTryToVerifyItWithAGoodSecret() error {
 	if token != nil && correctToken != nil && *token != *correctToken {
 		return fmt.Errorf("token does not match expected value")
 	}
-	result = VerifyAndDecode("my-secret", *token)
+	result = edgeauth.VerifyAndDecode("my-secret", *token)
 	return nil
 }
 
@@ -133,31 +134,31 @@ func theTokenHasCapability(arg1 string) error {
 // FIELD TESTING STEPS
 
 func theRemoteAddressFieldShouldBe(arg1 string) error {
-	return checkField(RemoteAddressField, arg1)
+	return bddCheckField(edgeauth.RemoteAddressField, arg1)
 }
 
 func theURIFieldShouldBe(arg1 string) error {
-	return checkField(URIField, arg1)
+	return bddCheckField(edgeauth.URIField, arg1)
 }
 
 func theSessionFieldShouldBe(arg1 string) error {
-	return checkField(SessionIDField, arg1)
+	return bddCheckField(edgeauth.SessionIDField, arg1)
 }
 
 func theTypeFieldShouldBe(arg1 string) error {
-	return checkField(TypeField, arg1)
+	return bddCheckField(edgeauth.TypeField, arg1)
 }
 
 func theTagFieldShouldBe(arg1 string) error {
-	return checkField(RequiredTagField, arg1)
+	return bddCheckField(edgeauth.RequiredTagField, arg1)
 }
 
 func theAppliedTagsFieldShouldBe(arg1 string) error {
-	return checkArrayField(ApplyTagsField, arg1)
+	return bddCheckArrayField(edgeauth.ApplyTagsField, arg1)
 }
 
 func theCapabilitiesFieldShouldBe(arg1 string) error {
-	return checkArrayField(CapabilitiesField, arg1)
+	return bddCheckArrayField(edgeauth.CapabilitiesField, arg1)
 }
 
 // RESULT CHECKING STEPS
@@ -243,7 +244,7 @@ func buildToken() error {
 	return nil
 }
 
-func checkField(expectedField string, expectedValue string) error {
+func bddCheckField(expectedField string, expectedValue string) error {
 	if result == nil || result.Value == nil {
 		return fmt.Errorf("the verification value is not set")
 	}
@@ -254,7 +255,7 @@ func checkField(expectedField string, expectedValue string) error {
 	return nil
 }
 
-func checkArrayField(expectedField string, expectedValues string) error {
+func bddCheckArrayField(expectedField string, expectedValues string) error {
 	if result == nil || result.Value == nil {
 		return fmt.Errorf("the verification value is not set")
 	}
