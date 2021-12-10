@@ -31,7 +31,16 @@ $ go build ./cmd/edgeauth
 In the `golang` directory:
 
 ```shell script
-$ go test -v ./test
+$ cd test
+$ go test -v
+```
+
+To run Behavior-Driven Development tests with `godog`:
+
+```shell script
+$ go install github.com/cucumber/godog/cmd/godog@v0.12.0
+$ cd test
+$ godog run
 ```
 
 ## Example
