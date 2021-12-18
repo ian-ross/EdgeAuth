@@ -9,6 +9,7 @@ import (
 func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Before(func(ctx context.Context, sc *godog.Scenario) (context.Context, error) {
 		token = nil
+		secret = nil
 		correctToken = nil
 		builder = nil
 		result = nil
@@ -18,8 +19,8 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^I have a bad token$`, iHaveABadToken)
 	ctx.Step(`^I have a good token$`, iHaveAGoodToken)
 	ctx.Step(`^I have a good token with URI "([^"]*)"$`, iHaveAGoodTokenWithURI)
-	ctx.Step(`^I try to verify it with a good secret$`, iTryToVerifyItWithAGoodSecret)
-	ctx.Step(`^I try to verify it with a bad secret$`, iTryToVerifyItWithABadSecret)
+	ctx.Step(`^I try to verify a token with a good secret$`, iTryToVerifyATokenWithAGoodSecret)
+	ctx.Step(`^I try to verify a token with a bad secret$`, iTryToVerifyATokenWithABadSecret)
 	ctx.Step(`^The correct token is "([^"]*)"$`, theCorrectTokenIs)
 	ctx.Step(`^The token is for a channel "([^"]*)"$`, theTokenIsForAChannel)
 	ctx.Step(`^The token is for a channel alias "([^"]*)"$`, theTokenIsForAChannelAlias)

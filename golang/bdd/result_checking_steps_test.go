@@ -2,9 +2,16 @@ package edgeauth
 
 import (
 	"fmt"
+
+	edgeauth "github.com/ian-ross/EdgeAuth/golang"
 )
 
 func verificationShouldFailWithError(arg1 string) error {
+	err := buildToken()
+	if err != nil {
+		return err
+	}
+	result = edgeauth.VerifyAndDecode(*secret, *token)
 	if result.Verified {
 		return fmt.Errorf("token did not fail to verify")
 	}
@@ -21,6 +28,11 @@ func verificationShouldFailWithError(arg1 string) error {
 }
 
 func verificationShouldPass() error {
+	err := buildToken()
+	if err != nil {
+		return err
+	}
+	result = edgeauth.VerifyAndDecode(*secret, *token)
 	if !result.Verified {
 		return fmt.Errorf("token failed to verify")
 	}
